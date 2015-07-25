@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Settings</title>
+
+    <link href="../Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../Bootstrap/bootstrap-3.3.5-dist/js/jquery-2.1.4.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.js" type="text/javascript"></script>
+</head>
+
+<style>
+    .map {
+        background-image: url("../images/Steps/world.png");
+        width: 1100px;
+        height: 500px;
+    }
+</style>
+
+<body>
+<div class="container">
+    <div>
+        <form name="change">
+            <label for="Country">Please Select Your Country</label>
+            <select name="Country" id="Country" onclick="abc()">
+                <option value="Africa">Africa</option>
+                <option value="Australia">Australia</option>
+                <option value="Europe">Europe</option>
+                <option value="NM">North America</option>
+                <option value="SA">South America</option>
+            </select>
+        </form>
+    </div>
+
+    <script>
+         var abc = function ChangeCountry() {
+                var index = document.change.Country;
+                if (index.value == "Africa") {
+                    document.getElementById("av").src = "../images/Steps/pajo.png";
+                    document.getElementById("av1").src = "";
+                    document.getElementById("av2").src = "";
+                    document.getElementById("av3").src = "";
+                    document.getElementById("av4").src = "";
+                }
+                else if (index.value == "Australia") {
+                    document.getElementById("av1").src = "../images/Steps/pajo.png";
+                    document.getElementById("av").src = "";
+                    document.getElementById("av2").src = "";
+                    document.getElementById("av3").src = "";
+                    document.getElementById("av4").src = "";
+                }
+                else if (index.value == "Europe") {
+                    document.getElementById("av").src = "";
+                    document.getElementById("av2").src = "../images/Steps/pajo.png";
+                    document.getElementById("av1").src = "";
+                    document.getElementById("av3").src = "";
+                    document.getElementById("av4").src = "";
+                }
+                else if (index.value == "NM") {
+                    document.getElementById("av3").src = "../images/Steps/pajo.png";
+                    document.getElementById("av1").src = "";
+                    document.getElementById("av2").src = "";
+                    document.getElementById("av").src = "";
+                    document.getElementById("av4").src = "";
+                }
+                else if (index.value == "SA") {
+                    document.getElementById("av4").src = "../images/Steps/pajo.png";
+                    document.getElementById("av1").src = "";
+                    document.getElementById("av2").src = "";
+                    document.getElementById("av3").src = "";
+                    document.getElementById("av").src = "";
+                }
+                else {
+                    document.getElementById("av").src = "";
+                }
+            }
+    </script>
+
+    <div class="map">
+        <div class="col-lg-12">
+            <div class="col-lg-2"><img id="av2" src="" name="img"/></div>
+            <br/><br/><br/><br/>
+            <div class="col-lg-2"><img id="av1" src="" name="img" /></div>
+            <div class="col-lg-3"><img id="av" src="" name="img"/></div>
+            <div class="col-lg-3"><img id="av3" name="img" src=""/></div>
+            <div class="col-lg-2"><img id="av4" name="img" src=""/></div>
+        </div>
+    </div>
+
+    <br>
+    <hr style="width: 100%; color: black; height: 1px; background-color:lightgray"/>
+
+    <div style="padding-left: 900px">
+        <input type="button" class="btn btn-default" id="BtnOK" value="OK">
+        <input type="button" class="btn btn-default" id="btnCancel"
+        value="Cancel">
+    </div>
+
+</div>
+</body>
+</html>

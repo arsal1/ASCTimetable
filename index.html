@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Index</title>
+    <!--Stylesheets-->
+    <link href="Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/menustyle.css" rel="stylesheet">
+    <!--Scripts-->
+    <script src="Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="Bootstrap/bootstrap-3.3.5-dist/js/jquery-2.1.4.js" type="text/javascript"></script>
+</head>
+
+<script>
+    document.getElementById("selector").addEventListener("change", function () {
+        document.getElementById("files").innerHTML =
+                document.getElementById("selector").files[0].name;
+    });
+</script>
+
+<body>
+<div class="container">
+    <div id="header" style="position: relative; height: 100px; z-index: 10;"></div>
+
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+
+    <div class=" col-lg-12">
+        <div class="col-lg-4">
+            <a href=""><img src="images/index/tutorial_128.png"><br><h5 class="homeImg">Show Tutorial</h5></a>
+        </div>
+
+        <div class="col-lg-3">
+            <div style="height: 193px; padding-top: 50px; padding-left: 50px">
+                <a href="New/Step1.html"><img src="images/index/wizard_128.png"><br><h5>Create new TimeTable</h5></a>
+            </div>
+        </div>
+
+        <div class="col-lg-5 verticalLine">
+            <div style="height: 193px; padding-top: 50px; padding-left: 50px">
+
+            </div>
+        </div>
+    </div>
+    <div class=" col-lg-12">
+        <div class="col-lg-3" style="padding-left: 70px">
+            <a href=""><img src="images/index/demofiles_128.png"><br><h5>Demo Files</h5></a>
+        </div>
+
+        <div class="col-lg-2" style="padding-left: 20px">
+            <a href="New/Step1.html"><img src="images/index/onlinehelp_128.png"><br><h5>Online Help</h5></a>
+        </div>
+
+        <div class="col-lg-2">
+            <a href=""><img src="images/index/world_128.png"><br><h5>English(United States)</h5></a>
+        </div>
+
+        <div class="col-lg-5 verticalLine">
+            <div style="height: 193px; padding-top: 50px; padding-left: 50px">
+            </div>
+        </div>
+    </div>
+
+    <div class=" col-lg-12">
+        <div class="col-lg-3" style="padding-left: 70px">
+            <a href=""><img src="images/index/purchase_128.png"><br><h5>Check Prices/Purchase the Software</h5></a>
+        </div>
+
+        <div class="col-lg-2" style="padding-left: 20px">
+            <a href="New/Step1.html"><img src="images/index/register_128.png"><br><h5>Input Registration Code</h5></a>
+        </div>
+
+        <div class="col-lg-2">
+            <a href=""><img src="images/index/contactus_128.png"><br><h5>Contact Us</h5></a>
+        </div>
+
+        <div class="col-lg-5 verticalLine">
+            <div style="height: 193px; padding-top: 50px; padding-left: 50px"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

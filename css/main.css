@@ -1,0 +1,32 @@
+@import "menustyle.css";
+@import "steps.css";
+
+.homeImg {
+    padding-left: 80px;
+    color: #000000;
+}
+
+.col-lg-4:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    background-color: palegoldenrod;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.col-lg-3:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    background-color: palegoldenrod;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.col-lg-2:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    background-color: palegoldenrod;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.verticalLine {
+    border-left: 1px solid gray;
+}

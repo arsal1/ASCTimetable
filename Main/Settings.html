@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Settings</title>
+
+    <link href="../Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../Bootstrap/bootstrap-3.3.5-dist/js/jquery-2.1.4.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.js" type="text/javascript"></script>
+
+    <style>
+        .format {
+            background-color: grey;
+        }
+
+        .btnImg {
+            float: left;
+        }
+
+        input[disabled] {
+            color: Gray;
+            text-decoration: none;
+        }
+
+        .downButtons {
+            padding: 20px;
+            width: 180px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<div>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#">Settings</a></li>
+    <li role="presentation"><a href="../index.html">Country</a></li>
+    <li role="presentation"><a href="#">Schedule Type</a></li>
+</ul>
+</div>
+
+
+
+
+<div>
+    <form class="form-horizontal">
+        <div class="col-lg-2" style="padding-top: 30px">
+            <img src="../images/Steps/school_48.png" alt="changeuser">
+        </div>
+
+        <div class="col-lg-10" style="padding-top: 10px">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name of the School</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="school">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Academic Year</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="academic_year">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Registration Name</label>
+
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="registration_name">
+
+                </div>
+                <input type="button" class="btn btn-default" id="btn_registration" value="Change">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <form class="form-horizontal">
+        <div class="col-lg-2" style="padding-top: 30px">
+            <img src="../images/Steps/schedule_48.png" alt="changeuser">
+        </div>
+
+        <div class="col-lg-10" style="padding-top: 30px">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Periods Per Day</label>
+
+                <div class="col-sm-2">
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                    Bell times/Rename periods
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     data-backdrop="static">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Number of Days</label>
+
+                <div class="col-sm-2">
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1">
+                    Rename Days
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     data-backdrop="static">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel1">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <label style="padding-left: 158px; padding-top: 5px">Weekend</label>
+                </div>
+                <div class="col-sm-4" style="padding-left: 159px">
+                    <select class="form-control">
+                        <option>Saturday - Sunday</option>
+                        <option>Friday - Saturday</option>
+                        <option>Thursday - Friday</option>
+                    </select>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label style="padding-left: 180px">
+                    <input type="checkbox">Show day number instead of day name (e.g. Day 1 instead o
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <form class="form-horizontal">
+        <div class="col-lg-2" style="padding-top: 30px">
+            <img src="../images/Steps/days_48.png" alt="changeuser">
+        </div>
+
+        <div class="col-lg-10" style="padding-top: 30px">
+            <div class="form-group">
+                <div class="checkbox">
+                    <label style="padding-left: 52px">
+                        <input type="checkbox" id="chkAgree" onclick="goFurther()">I want to create multi term or
+                        multi-week timetable that will be<br> different
+                        in each week or term
+                    </label>
+                </div>
+                <div style="padding-left: 100px; padding-top: 20px">
+                    <input type="button" id="btnterms" class="btn btn-default" value="Define Terms" data-toggle="modal"
+                           data-target="#myModal2" disabled>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         data-backdrop="static">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel2">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="button" id="btnWeeks" class="btn btn-default" value="Define Weeks" data-toggle="modal"
+                           data-target="#myModal3" disabled>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         data-backdrop="static">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel3">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <br><br>
+
+    <div style="text-align: center">
+        </br></br>
+        <button class="btn btn-default downButtons" data-toggle="modal" data-target=".bs-example-modal-lg">
+            <img src="../images/Steps/settings_32.png" class="btnImg"><span style="padding-top: 20px">Parameters</span>
+        </button>
+        <button class="btn btn-default downButtons" onClick="location.href='../Main/CustomFields.html'">
+            <img src="../images/Steps/settings_32.png" class="btnImg">Custom Fields
+        </button>
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="ModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"><b>Generate different timetables</b>
+                            </label>
+
+                            <p>
+                                A different timetable is generated every time. We recommend enabling this option .
+                            </p>
+                        </div>
+                        <br/> <br/>
+
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="CheckYes" onclick="ClickCheck()"><b>Check Exhaustion</b>
+                            </label>
+                            <label style="display: block" aria-disabled="false">
+                                A different timetable is generated every time. We recommend enabling this option .
+                                <input id="tex" type="text" value="5" style="width: 40px" disabled>
+                            </label>
+                        </div>
+
+                        <script>
+                            function ClickCheck() {
+                                if (document.getElementById("CheckYes").checked == true) {
+                                    document.getElementById("tex").disabled = false;
+
+                                }
+                                else {
+                                    document.getElementById("tex").disabled = true;
+                                }
+                            }
+                        </script>
+
+                        <br/><br/>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled><b>Allow the generator to place lessons on 0th
+                                period</b>
+                            </label>
+
+                            <p style="display: block">
+                                A different timetable is generated every time. We recommend enabling this option .
+                            </p>
+                        </div>
+
+                        <br/><br/>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="Checked" onclick="ClickChecked()"><b>Check Exhaustion</b>
+                            </label>
+                            <label style="display: block">
+                                A different timetable is generated every time. We recommend enabling this option .
+                                <input id="text1" type="text" value="5" style="width: 40px" disabled>
+                            </label>
+                        </div>
+
+                        <script>
+                            function ClickChecked() {
+                                if (document.getElementById("Checked").checked == true) {
+                                    document.getElementById("text1").disabled = false;
+
+                                }
+                                else {
+                                    document.getElementById("text1").disabled = true;
+                                }
+                            }
+                        </script>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr style="width: 100%; color: black; height: 1px; background-color:lightgray"/>
+
+    <div style="padding-left: 900px">
+        <input type="button" class="btn btn-default" id="BtnOK" value="OK">
+        <input type="button" class="btn btn-default" id="btnCancel"
+               value="Cancel">
+    </div>
+</div>
+</div>
+</body>
+</html>

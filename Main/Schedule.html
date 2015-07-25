@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Settings</title>
+
+    <link href="../Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../scripts/step2.js" type="text/javascript"></script>
+
+    <style>
+        .dont-show{
+            visibility:hidden;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+<h5 style="padding-top: 10px">Please tell us a bit more about your school.Do not worry if you are not sure,you can change this anytime later</h5>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px " >
+        <img src="../images/Steps/subject_64.png" alt="changeuser">
+
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowImageOnly(this)" >Subject</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowImageOnly(this)">Course</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick=" addClassToShowImageOnly(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3"></div>
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/Classroom_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>Students are organized into classes(groups) that have the same(nearly the same) schedule.Like 6A,603,6.3,6HT etc.Sometimes
+                they are divided into groups</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div style="padding-top: 15px">
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick=" addClassToShowSelected(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/Groups_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected3(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected3(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected3(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow2" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/Checklist_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected4(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected4(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected4(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow3" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/building_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected5(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected5(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected5(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow4" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/changeuser.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected6(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected6(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected6(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow5" href="#"></a>
+    </div>
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/Saturday_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected7(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected7(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected7(this); addClassToShowText(this);">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow6" href="#"></a>
+
+        <p class="abc" style="visibility: hidden">hhhhh</p>
+    </div>
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/terms_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected8(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected8(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected8(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow7" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/consecutively_64.png" alt="changeuser">
+    </div>
+
+
+    <div class="col-lg-4" style="padding-top: 10px">
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected9(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected9(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected9(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow8" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/2nd_period_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected10(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected10(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected10(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow9" href="#"></a>
+    </div>
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/same_period_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected11(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected11(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected11(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow10" href="#"></a>
+    </div>
+</div>
+
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/gaps_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected12(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected12(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected12(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <p id="textshow11"></p>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/2nd_period_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected13(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected13(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected13(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow12" href="#"></a>
+    </div>
+
+</div>
+
+
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/0thPeriod_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected14(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected14(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected14(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow13" href="#"></a>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/2shifts_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected15(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected15(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected15(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow14" href="#"></a>
+    </div>
+
+</div>
+
+
+<div class="col-lg-12" style="border: 1px solid grey">
+
+    <div class="col-lg-1" style="padding-top: 10px">
+        <img src="../images/Steps/2plus1_64.png" alt="changeuser">
+    </div>
+
+    <div class="col-lg-4" style="padding-top: 10px">
+
+        <div class="form-group" style="padding-top: 5px">
+            <p>What word do you use in School 'Course' or 'Subject'</p>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-4">
+        <div>
+            <img src="../images/tick.jpg"  class="dont-show" style="">
+            <a href="javascript:;" onclick="addClassToShowSelected16(this)" >Yes</a> <br>
+            <img src="../images/tick.jpg" class="dont-show" >
+            <a href="javascript:;" onclick="addClassToShowSelected16(this)">No</a> <br>
+            <img src="../images/tick.jpg"  class="dont-show">
+            <a href="javascript:;" onclick="addClassToShowSelected16(this)">Not Sure</a>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <a id="textshow15" href="#"></a>
+    </div>
+
+</div>
+
+<br>
+<hr style="width: 100%; color: black; height: 1px; background-color:lightgray"/>
+
+<div style="padding-left: 900px">
+    <input type="button" class="btn btn-default" id="BtnOK" value="OK">
+    <input type="button" class="btn btn-default" id="btnCancel"
+           value="Cancel">
+</div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+
+/* Step1 */
+
+.format {
+    background-color: grey;
+}
+
+input[disabled] {
+    color: Gray;
+    text-decoration: none;
+}
+
+.btnImg {
+    float: left;
+}
+
+.TopPadding{
+    padding-top: 30px
+}
+
+.ButtonFormat{
+    padding-left: 900px;
+}
+
+/* Step2 */
+
+.dont-show{
+    visibility:hidden;
+}
+
+.border{
+    border: 1px solid grey;
+}
+
+.SetFormat{
+    padding-top: 10px;
+}
+
+.SetFormatText{
+    padding-top: 5px;
+}
+
+.horizontal_line{
+    width: 100%;
+    color: black;
+    height: 1px;
+    background-color:lightgray;
+}
+
+/* Step3 */
+
+.image_left{
+    padding-top: 20px
+}
+
+.btnWidth{
+    width: 150px;
+}
+
+.TopHeading{
+    padding-top: 10px;
+    padding-left: 120px;
+}
+
+.RightBtn{
+    width: 100px;
+}
