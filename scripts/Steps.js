@@ -1,11 +1,17 @@
 /**
  * Created by nm on 7/11/15.
  */
+function $id(myId) {
+    return document.getElementById(myId);
+}
 
+function $class(myClass) {
+    return document.getElementsByClassName(myClass);
+}
 
 var StepsModule = {
     step1: {
-        goFurther: function() {
+        goFurther: function() {/*
             this.checkButton = $('#chkAgree');
             if(this.checkButton.is(':checked')) {
                 this.btnTerms.prop('disabled', false);
@@ -14,6 +20,15 @@ var StepsModule = {
             else {
                 this.btnTerms.prop('disabled', true);
                 this.btnWeeks.prop('disabled', true);
+            }
+*/
+            if (document.getElementById("chkAgree").checked == true) {
+                document.getElementById("btnterms").disabled = false;
+                document.getElementById("btnWeeks").disabled = false;
+            }
+            else {
+                document.getElementById("btnterms").disabled = true;
+                document.getElementById("btnWeeks").disabled = true;
             }
         }
     },

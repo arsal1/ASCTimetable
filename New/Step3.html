@@ -10,6 +10,23 @@
     <!-- Scripts-->
     <script src="../Bootstrap/bootstrap-3.3.5-dist/js/jquery-2.1.4.js" type="text/javascript"></script>
     <script src="../Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        //        ng.ready( function() {
+        //            var clr_pk1 = new ng.ColorPicker({
+        //                input: 'my_color_picker1'
+        //            });
+        //
+        //            var clr_pk2 = new ng.ColorPicker({
+        //                input: 'my_color_picker2',
+        //                opacity: true
+        //            });
+        //
+        //            var clr_pk3 = new ng.ColorPicker('my_color_picker3');
+        //        });
+    </script>
+
 </head>
 
 <body>
@@ -26,9 +43,9 @@
     <div class="col-lg-8 border">
         <div class="col-lg-12 SetFormat">
 
-            <table class="table">
+            <table id="subjectsEnter" class="table">
                 <thead>
-                <tr>
+                <tr >
                     <th>Name</th>
                     <th>Short</th>
                     <th>Count</th>
@@ -39,6 +56,8 @@
                     <th>Doublelessons can span over</th>
                 </tr>
                 </thead>
+                <tbody>
+                </tbody>
             </table>
 
         </div>
@@ -63,7 +82,7 @@
                                 <label>Subject Title:</label>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <input type="text" name="subject" placeholder="Subject">
+                                <input type="text" id="subject" name="subject">
                             </div>
                         </div>
                         <br/>
@@ -72,7 +91,7 @@
                                 <label>Short:</label>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <input type="text" name="short">
+                                <input type="text" id="short" name="short">
                             </div>
                         </div>
                         <br/>
@@ -82,42 +101,48 @@
                                 <button class="btn btn-default">Custom fields</button>
                             </div>
                         </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-6">
+                                <label>Color:</label>
+                            </div>
+                            <div class="col-xs-4 col-sm-6">
+                                <input type="color" id="my_color_picker3" value="#336699" data-swatches_only="1">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="SetFormat">
+                            <button class="btn btn-default" style="width:530px;">Classrooms</button>
+                        </div>
+                        <br/>
                         <div class="row">
                             <div class="col-xs-8 col-sm-6">
 
                             </div>
-                        </div>
-                        <br/>
-                        <div style="padding-left: 10px">
-                            <button class="btn btn-default" style="width:500px;">Classrooms</button>
+                            <div class="col-xs-4 col-sm-6">
+                                <button class="btn btn-default">Set for all lessons of this subject</button>
+                            </div>
+
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button id="saveBtn" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        </br> </br>
-        <button type="button" class="btn btn-default btnWidth" disabled>
-            <img src="../images/Steps/teacher_16.png" class="btnImg"> Edit
-        </button>
-        </br> </br>
-        <button type="button" class="btn btn-default btnWidth" disabled>
-            <img src="../images/Steps/del_16.png" class="btnImg"> Remove
-        </button>
         </br> </br>  </br>
-        <button type="button" class="btn btn-default btnWidth" disabled>
+        <button type="button" id="BtnLessons" class="btn btn-default btnWidth" disabled>
             <img src="../images/Steps/lessons_16.png" class="btnImg"> Lessons
         </button>
         </br> </br>
-        <button type="button" class="btn btn-default btnWidth" disabled>
+        <button type="button" id="BtnTimeOff" class="btn btn-default btnWidth" disabled>
             <img src="../images/Steps/timeoff_16.png" class="btnImg"> Time off
         </button>
         </br> </br>
-        <button type="button" class="btn btn-default btnWidth" disabled>
+        <button type="button" id="BtnConstraints" class="btn btn-default btnWidth" disabled>
             <img src="../images/Steps/constraints_16.png" class="btnImg"> Constraints
         </button>
     </div>
@@ -144,6 +169,90 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var isItInEditMode = function(){
+
+        var classElem = ($('.itsSelected').length == 0);
+        debugger;
+        if ( classElem ) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    $('#subject').keyup(function(){
+        $('#short').val($('#subject').val().substr(0,1));
+    });
+    $("#saveBtn").on("click", function (e) {
+        //saveBtn work here
+        var Subject = $("#subject").val();
+        var Short = $("#short").val();
+
+        debugger;
+        if (isItInEditMode()){
+            var row = $('.itsSelected')[0];
+            var rowElems = row.childNodes;
+
+            rowElems[0].firstChild.innerHTML = Subject;
+            rowElems[2].firstChild.innerHTML = Short;
+
+            var x = /\sitsSelected\s/.test(row.className)
+            console.log(x);
+            row.className = row.className.replace(/\sitsSelected/g, '');
+        }
+        else {
+            $('#subjectsEnter tbody').append(
+                            "<tr class='clickable_row'> +"
+                            +" <td><a class='clickable_row' onclick='work(this)'>" + Subject +"</a></td>"
+                            +" <td><a class='clickable_row' href='javascript:;' onclick='work(this)'>" + Short +"</a></td> "
+                            +" </tr>"
+            );
+        }
+        $("#subject").val("");
+        $("#short").val("");
+
+        document.getElementById("BtnLessons").disabled = false;
+        document.getElementById("BtnTimeOff").disabled = false;
+        document.getElementById("BtnConstraints").disabled = false;
+       // e.stopPropagation();
+    });
+
+
+    var work = function(elem){
+
+        var row = elem.parentElement.parentElement;
+        debugger;
+        row.className += " itsSelected ";
+        var rowElems = row.childNodes;
+
+        var fname = rowElems[0].firstChild.innerHTML;
+        var lname = rowElems[2].firstChild.innerHTML;
+
+        /*var childs = $('tbody')[0].childNodes;
+         //childs
+         childs.forEach(function(item,index,array){
+         if(item.className.indexOf('selected_row') != -1){
+         item.className.replace(/\bselected_row\b/,'');
+         }
+         })
+
+         elem.parentElement.parentElement.className += " selected_row";*/
+
+        $("#myModal").modal("show");
+        $("#subject").val(fname); //$(this).closest('tr').children()[0].textContent
+        $("#short").val(lname); //$(this).closest('tr').children()[1].textContent
+
+        //e.stopPropagation();
+    }
+    //$('table tbody tr td').on('click',function(){
+    $('.clickable_row').on('click',function(){
+        $("#myModal").modal("show");
+        e.stopPropagation();
+        //$("#subject").val($(this).closest('tr').children()[0].textContent);
+        //$("#short").val($(this).closest('tr').children()[1].textContent);
+    });
+</script>
 
 </body>
 </html>

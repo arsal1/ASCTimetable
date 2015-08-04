@@ -30,3 +30,13 @@
 .verticalLine {
     border-left: 1px solid gray;
 }
+
+.TextArea {
+    resize: none;
+    height: 200px;
+    width: 600px;
+}
+
+.EmailText {
+    width: 600px;
+}
