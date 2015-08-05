@@ -5,6 +5,10 @@ function $id(myId) {
     return document.getElementById(myId);
 }
 
+function $changeImage(imgID){
+    return document.getElementById(imgID).src = "../images/Steps/no_32.png";
+}
+
 function $class(myClass) {
     return document.getElementsByClassName(myClass);
 }
@@ -393,4 +397,6 @@ var addClassToShowSelected16 = function(elem){
 
 setView('Step1');
 
+
+/** Step3 **/
 
