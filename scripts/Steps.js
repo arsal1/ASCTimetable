@@ -16,16 +16,16 @@ function $class(myClass) {
 var StepsModule = {
     step1: {
         goFurther: function() {/*
-            this.checkButton = $('#chkAgree');
-            if(this.checkButton.is(':checked')) {
-                this.btnTerms.prop('disabled', false);
-                this.btnWeeks.prop('disabled', false);
-            }
-            else {
-                this.btnTerms.prop('disabled', true);
-                this.btnWeeks.prop('disabled', true);
-            }
-*/
+         this.checkButton = $('#chkAgree');
+         if(this.checkButton.is(':checked')) {
+         this.btnTerms.prop('disabled', false);
+         this.btnWeeks.prop('disabled', false);
+         }
+         else {
+         this.btnTerms.prop('disabled', true);
+         this.btnWeeks.prop('disabled', true);
+         }
+         */
             if (document.getElementById("chkAgree").checked == true) {
                 document.getElementById("btnterms").disabled = false;
                 document.getElementById("btnWeeks").disabled = false;
@@ -44,12 +44,12 @@ var StepsModule = {
 };
 
 /*function setView(step) {
-    $('#stepsView').load('../New/'+ step + '.html', function() {
-        StepsModule.step1.checkButton = $('#chkAgree');
-        StepsModule.step1.btnTerms = $('#btnterms');
-        StepsModule.step1.btnWeeks = $('#btnWeeks');
-    });
-}*/
+ $('#stepsView').load('../New/'+ step + '.html', function() {
+ StepsModule.step1.checkButton = $('#chkAgree');
+ StepsModule.step1.btnTerms = $('#btnterms');
+ StepsModule.step1.btnWeeks = $('#btnWeeks');
+ });
+ }*/
 
 // Step 1
 
@@ -59,8 +59,8 @@ function goFurther() {
         document.getElementById("btnWeeks").disabled = false;
     }
     else {
-       document.getElementById("btnterms").disabled = true;
-       document.getElementById("btnWeeks").disabled = true;
+        document.getElementById("btnterms").disabled = true;
+        document.getElementById("btnWeeks").disabled = true;
     }
 }
 
@@ -400,3 +400,24 @@ var addClassToShowSelected16 = function(elem){
 
 /** Step3 **/
 
+
+
+var Steps = {
+    view: function(step) {
+        if(step === undefined)
+            step = "Step1";
+        $( "#stepsView" ).load( "../New/" + step + ".html" );
+        this.update();
+        console.log("Content loaded");
+    },
+    update: function() {
+        this.data.school = $id('school');
+        this.data.academic_year = $id('academic_year')
+    },
+    data: {
+        school: "",
+        academic_year: ""
+    }
+};
+
+Steps.view();
