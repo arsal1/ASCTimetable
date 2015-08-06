@@ -43,13 +43,13 @@ var StepsModule = {
     }
 };
 
-function setView(step) {
+/*function setView(step) {
     $('#stepsView').load('../New/'+ step + '.html', function() {
         StepsModule.step1.checkButton = $('#chkAgree');
         StepsModule.step1.btnTerms = $('#btnterms');
         StepsModule.step1.btnWeeks = $('#btnWeeks');
     });
-}
+}*/
 
 // Step 1
 
@@ -395,7 +395,7 @@ var addClassToShowSelected16 = function(elem){
     elem.previousElementSibling.className = "";
 }
 
-setView('Step1');
+//setView('Step1');
 
 
 /** Step3 **/

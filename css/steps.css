@@ -65,3 +65,18 @@ input[disabled] {
 .RightBtn{
     width: 100px;
 }
+
+.TableRow {
+    color: #000000;
+}
+
+.DropDownSize {
+    width: 100px;
+}
+
+.importDiv{
+    overflow:auto;
+    width:400px;
+    height:300px;
+    border: 1px solid #000000
+}
