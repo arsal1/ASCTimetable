@@ -80,7 +80,6 @@ var addClassToShowImageOnly = function(elem){
     elem.previousElementSibling.className = "";
 }
 
-
 var addClassToShowSelected = function(elem){
     var allChildNodes = elem.parentNode.childNodes;
     if (elem && elem.innerHTML == "No"){
@@ -100,7 +99,6 @@ var addClassToShowSelected = function(elem){
     })
     elem.previousElementSibling.className = "";
 }
-
 
 var addClassToShowSelected3 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
@@ -203,7 +201,6 @@ var addClassToShowSelected7 = function(elem) {
     elem.previousElementSibling.className = "";
 }
 
-
 var addClassToShowSelected8 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
     if (elem && elem.innerHTML == "Yes") {
@@ -223,9 +220,6 @@ var addClassToShowSelected8 = function(elem) {
     })
     elem.previousElementSibling.className = "";
 }
-
-
-
 
 var addClassToShowSelected9 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
@@ -247,8 +241,6 @@ var addClassToShowSelected9 = function(elem) {
     elem.previousElementSibling.className = "";
 }
 
-
-
 var addClassToShowSelected10 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
     if (elem && elem.innerHTML == "Yes") {
@@ -268,8 +260,6 @@ var addClassToShowSelected10 = function(elem) {
     })
     elem.previousElementSibling.className = "";
 }
-
-
 
 var addClassToShowSelected11 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
@@ -291,7 +281,6 @@ var addClassToShowSelected11 = function(elem) {
     elem.previousElementSibling.className = "";
 }
 
-
 var addClassToShowSelected12 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
     if (elem && elem.innerHTML == "Yes") {
@@ -311,7 +300,6 @@ var addClassToShowSelected12 = function(elem) {
     })
     elem.previousElementSibling.className = "";
 }
-
 
 var addClassToShowSelected13 = function(elem) {
     var allChildNodes = elem.parentNode.childNodes;
@@ -399,6 +387,40 @@ var addClassToShowSelected16 = function(elem){
 
 
 /** Step3 **/
+
+
+
+/**Step4**/
+function Constraint() {
+    if ($id("chkPreparation").checked == true) {
+        $id("show").disabled = false;
+    }
+    else {
+        $id("show").disabled = true;
+    }
+}
+    function ConstraintLunch() {
+        if ($id("Lunch").checked == true) {
+            $id("Lunch1").disabled = false;
+            $id("Lunch2").disabled = false;
+            $id("chkLunch").disabled = false;
+        }
+        else {
+            $id("Lunch1").disabled = true;
+            $id("Lunch2").disabled = true;
+            $id("chkLunch").disabled = true;
+        }
+    }
+function LoadChange(){
+    if ($id("chkClassTeacher").checked == true){
+        $id("BtnChange").disabled = false;
+    }
+    else {
+        $id("BtnChange").disabled = true;
+    }
+}
+
+
 
 
 
