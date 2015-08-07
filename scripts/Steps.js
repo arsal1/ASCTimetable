@@ -420,7 +420,24 @@ function LoadChange(){
     }
 }
 
-
+function LoadGroupTextBox(){
+    if ($id("chkStudent").checked == true){
+        $id("groupText1").disabled = false;
+        $id("groupText2").disabled = false;
+        $id("groupText3").disabled = false;
+        $id("groupText4").disabled = false;
+        $id("groupText5").disabled = false;
+        $id("groupText6").disabled = false;
+    }
+    else {
+        $id("groupText1").disabled = true;
+        $id("groupText2").disabled = true;
+        $id("groupText3").disabled = true;
+        $id("groupText4").disabled = true;
+        $id("groupText5").disabled = true;
+        $id("groupText6").disabled = true;
+    }
+}
 
 
 
