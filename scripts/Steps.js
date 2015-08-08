@@ -455,8 +455,97 @@ var Steps = {
     },
     data: {
         school: "",
-        academic_year: ""
+        academic_year: "",
+        registration_name: "",
+        periods: "",
+        no_of_days: undefined
+
     }
 };
 
 Steps.view();
+
+
+Steps.form = {
+  first: {
+      school: "",
+      academic_year: "",
+      registration_name: "",
+      periods: "",
+      no_of_days: undefined,
+      weekend: "",
+      update: function(){
+          this.first.school = $id('school');
+          this.first.academic_year = $id('academic_year');
+          this.first.registration_name = $id('registration_name');
+          this.first.periods = $id('periods');
+          this.first.academic_year = $id('academic_year');
+          this.first.weekend = $id('weekend');
+      }
+  },
+  second: {
+      checks: [],
+      update: function() {
+      }
+  },
+  third: {
+      tableData: [],
+      update: function() {
+          var subjectData = [];
+          $('#subjectsEnter tbody tr').each(function(index, data){
+              var item = {};
+              var a = $(data).children();
+              item.name = a[0].innerText;
+              item.short = a[1].innerText;
+              item.count = a[2].innerText;
+              item.timeOff = a[3].innerText;
+              Steps.form.third.tableData.push(item);
+          });
+      }
+  },
+  fourth: {
+      tableData: [],
+      update: function() {
+          var subjectData = [];
+          $('#classesEnter tbody tr').each(function(index, data){
+              var item = {};
+              var a = $(data).children();
+              item.name = a[0].innerText;
+              item.short = a[1].innerText;
+              item.count = a[2].innerText;
+              item.timeOff = a[3].innerText;
+              Steps.form.fourth.tableData.push(item);
+          });
+      }
+  },
+  five: {
+      tableData: [],
+      update: function() {
+          var subjectData = [];
+          $('#classRoomEnter tbody tr').each(function(index, data){
+              var item = {};
+              var a = $(data).children();
+              item.name = a[0].innerText;
+              item.short = a[1].innerText;
+              item.count = a[2].innerText;
+              item.timeOff = a[3].innerText;
+              Steps.form.five.tableData.push(item);
+          });
+      }
+  },
+  six: {
+      tableData: [],
+      update: function() {
+          var subjectData = [];
+          $('#teacherEnter tbody tr').each(function(index, data){
+              var item = {};
+              var a = $(data).children();
+              item.name = a[0].innerText;
+              item.short = a[1].innerText;
+              item.count = a[2].innerText;
+              item.timeOff = a[3].innerText;
+              Steps.form.five.tableData.push(item);
+          });
+      }
+  }
+};

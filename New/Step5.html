@@ -11,7 +11,7 @@
 <div class="col-lg-8 border">
     <div class="col-lg-12 SetFormat">
 
-        <table id="subjectsEnter" class="table">
+        <table id="classRoomEnter" class="table">
             <thead>
             <tr>
                 <th>Name</th>
@@ -510,7 +510,7 @@
             row.className = row.className.replace(/\sitsSelected/g, '');
         }
         else {
-            $('#subjectsEnter tbody').append(
+            $('#classRoomEnter tbody').append(
                             "<tr class='clickable_row TableRow'> +"
                             + " <td><a class='clickable_row TableRow' onclick='work(this)'>" + Subject + "</a></td>"
                             + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + Short + "</a></td> "
@@ -569,7 +569,7 @@
     $("#BtnGenerate").on("click", function (e) {
         //saveBtn work here
 
-            $('#subjectsEnter tbody').append(
+            $('#classRoomEnter tbody').append(
                             "<tr class='clickable_row TableRow'> +"
                             + " <td><a class='clickable_row TableRow' onclick='work(this)'>Homeclassrooms</a></td>"
                             + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>HChh</a></td> "
