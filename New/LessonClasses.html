@@ -1,0 +1,250 @@
+
+<div class="jumbotron"></div>
+<div class="col-lg-12 SetFormat border">
+
+    <table id="subjectsEnter" class="table">
+        <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Teacher</th>
+            <th>Class</th>
+            <th>Count</th>
+            <th>Length</th>
+            <th>Classrooms</th>
+            <th>Week</th>
+            <th>Term</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<br/><br/><br/><br/>
+<hr class="horizontal_line">
+<div class="row">
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-default btnWidth" data-toggle="modal" data-target="#myModal">
+            New Lessons
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Lesson</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2">
+                                <img src="../images/Steps/teacher_48.png">
+                            </div>
+                            <div class="col-xs-4 col-sm-4">
+                                <label>Teacher</label><br/>
+                                <select id="teacher" class="form-control DropDownSize">
+                                    <option></option>
+                                    <option>Without Teacher</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6 col-sm-6"></div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2">
+                                <img src="../images/Steps/subject_48.png">
+
+                            </div>
+
+                            <div class="col-xs-10 col-sm-10">
+                                <label>Subject</label><br/>
+                                <input id="subjectLesson" type="text">
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2">
+                                <img src="../images/Steps/class_48.png">
+
+                            </div>
+                            <div class="col-xs-4 col-sm-4">
+                                <label>Class</label><br/>
+                                <select id="classLesson" class="form-control">
+                                    <option></option>
+                                    <option>Without Class</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-3 col-sm-3"></div>
+
+                            <div class="col-xs-3 col-sm-3">
+                                <br/>
+                                <button class="btn btn-default">Joint Classes</button>
+                            </div>
+
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2">
+                                <img src="../images/Steps/class_48.png">
+
+                            </div>
+                            <div class="col-xs-4 col-sm-4">
+                                <label>Lessons/Week</label><br/>
+                                <select class="form-control">
+                                    <option></option>
+                                    <option>Without Class</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-3 col-sm-3">
+                                <br/>
+                                <select class="form-control">
+                                    <option>Single</option>
+                                    <option>Double</option>
+                                    <option>Triple</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+
+                            <div class="col-xs-3 col-sm-3">
+                                <br/>
+                                <a href="">More Week/terms</a>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2">
+                                <img src="../images/Steps/school_48.png">
+                            </div>
+                            <div class="col-xs-5 col-sm-5">
+                                <input type="checkbox"> Home Classroom<br/>
+                                <input type="checkbox"> Shared room<br/><br/>
+                                <button class="btn btn-default">Other Available Classrooms</button>
+                            </div>
+                            <div class="col-xs-5 col-sm-5">
+                                <input type="checkbox"> Teacher's Classroom<br/>
+                                <input type="checkbox"> Subject's Classroom<br/><br/>
+                                <button class="btn btn-default">More Classrooms</button>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="modal-footer">
+                            <button id="saveBtn" type="button" class="btn btn-primary" data-dismiss="modal">OK
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+
+    </div>
+    <div class="col-lg-6">
+        <button type="button" class="btn btn-default btnWidth" onClick="Steps.view('Step4')">
+            Close
+        </button>
+    </div>
+
+
+</div>
+</div>
+
+
+<script>
+    var isItInEditMode = function () {
+
+        var classElem = ($('.itsSelected').length == 0);
+        if (classElem) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    $("#saveBtn").on("click", function (e) {
+        //saveBtn work here
+        var Subject = $("#subjectLesson").val();//teacher
+        var Short = $("#teacher").val();
+        var LessonClass = $("#classLesson").val();
+
+        if (isItInEditMode()) {
+            var row = $('.itsSelected')[0];
+            var rowElems = row.childNodes;
+
+            rowElems[0].firstChild.innerHTML = Subject;
+            rowElems[2].firstChild.innerHTML = Short;
+            rowElems[4].firstChild.innerHTML =  LessonClass;
+
+            var x = /\sitsSelected\s/.test(row.className)
+            console.log(x);
+            row.className = row.className.replace(/\sitsSelected/g, '');
+        }
+        else {
+            $('#subjectsEnter tbody').append(
+                            "<tr class='clickable_row TableRow'> +"
+                            + " <td><a class='clickable_row TableRow' onclick='work(this)'>" + Subject + "</a></td>"
+                            + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + Short + "</a></td> "
+                            + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + LessonClass + "</a></td> "
+                            + "<td>1</td>"
+                            + "<td>1</td>"
+                            + " </tr>"
+            );
+        }
+        $("#subjectLesson").val("");
+        $("#teacher").val("");
+        $("#classLesson").val("")
+
+        // $id("BtnLessons").disabled = false;
+        // $id("BtnTimeOff").disabled = false;
+        //  $id("BtnConstraints").disabled = false;
+        // e.stopPropagation();
+    });
+
+
+    var work = function (elem) {
+
+        var row = elem.parentElement.parentElement;
+        debugger;
+        row.className += " itsSelected ";
+        var rowElems = row.childNodes;
+
+        var fname = rowElems[0].firstChild.innerHTML;
+        var lname = rowElems[2].firstChild.innerHTML;
+        var lessons = rowElems[4].firstChild.innerHTML;
+
+        /*var childs = $('tbody')[0].childNodes;
+         //childs
+         childs.forEach(function(item,index,array){
+         if(item.className.indexOf('selected_row') != -1){
+         item.className.replace(/\bselected_row\b/,'');
+         }
+         })
+
+         elem.parentElement.parentElement.className += " selected_row";*/
+
+        $("#myModal").modal("show");
+        $("#subjectLesson").val(fname); //$(this).closest('tr').children()[0].textContent
+        $("#teacher").val(lname); //$(this).closest('tr').children()[1].textContent
+        $("classLesson").val(lessons);
+        //e.stopPropagation();
+    }
+    //$('table tbody tr td').on('click',function(){
+    $('.clickable_row').on('click', function () {
+        $("#myModal").modal("show");
+        e.stopPropagation();
+        //$("#subject").val($(this).closest('tr').children()[0].textContent);
+        //$("#short").val($(this).closest('tr').children()[1].textContent);
+    });
+
+</script>
