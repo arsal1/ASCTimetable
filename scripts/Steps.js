@@ -443,9 +443,16 @@ function LoadGroupTextBox(){
 
 var Steps = {
     view: function(step) {
-        if(step === undefined)
-            step = "Step1";
-        $( "#stepsView" ).load( "../New/" + step + ".html" );
+        if(step !== 'Finish') {
+            if(step === undefined)
+                step = "Step1";
+            $( "#stepsView" ).load( "../New/" + step + ".html" );
+        }
+        else {
+            $( "#stepsView" ).load( "../New/" + step + ".html", function(data) {
+                Steps.showFullData();
+            });
+        }
         this.update();
         console.log("Content loaded");
     },
@@ -459,7 +466,23 @@ var Steps = {
         registration_name: "",
         periods: "",
         no_of_days: undefined
-
+    },
+    showFullData: function() {
+        $('.finishContainer').append('' +
+            //'<div> First Step' + this.form.first + '</div>' +
+            //'<div> Second Step' + this.form.second + '</div>' +
+            //'<div> Third Step' + this.form.third + '</div>' +
+            //'<div> Fourth Step' + this.form.fourth + '</div>' +
+            '<div> Fourth Step Count: ' + this.form.fourth.tableData[0].count + '</div>' +
+            '<div> Fourth Step Name: ' + this.form.fourth.tableData[0].name + '</div>' +
+            '<div> Fourth Step Timeoff: ' + this.form.fourth.tableData[0].timeOff + '</div>' +
+            '<div> Fourth Step Short: ' + this.form.fourth.tableData[0].short + '</div>' +
+            '<div> Fifth Step Count: ' + this.form.five.tableData[0].count + '</div>' +
+            '<div> Fifth Step Name: ' + this.form.five.tableData[0].name + '</div>' +
+            '<div> Fifth Step Timeoff: ' + this.form.five.tableData[0].timeOff + '</div>' +
+            '<div> Fifth Step Short: ' + this.form.five.tableData[0].short + '</div>' +
+            '<div> Sixth Step: ' + this.form.six + '</div>'
+        );
     }
 };
 
@@ -549,3 +572,4 @@ Steps.form = {
       }
   }
 };
+
