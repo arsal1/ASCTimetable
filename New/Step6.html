@@ -118,7 +118,7 @@
 
             </div>
             <div class="modal-footer">
-                <button id="saveBtn" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                <button id="saveBtn" type="button" class="btn btn-primary">OK</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -126,7 +126,7 @@
 </div>
 
 </br> </br>  </br>
-<button type="button" id="BtnLessons" class="btn btn-default btnWidth" onClick="Steps.view('Lesson')" disabled>
+<button type="button" id="BtnLessons" class="btn btn-default btnWidth" disabled>
     <img src="../images/Steps/lessons_16.png" class="btnImg"> Lessons
 </button>
 
@@ -609,7 +609,9 @@
         $id("BtnTimeOff").disabled = false;
         $id("BtnConstraints").disabled = false;
         // e.stopPropagation();
-
+        Steps.form.six.update();
+        Steps.view('Lesson');
+        dismissModal('myModal');
     });
 
 

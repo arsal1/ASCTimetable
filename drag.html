@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.js"></script>
+</head>
+
+<style>
+    td{
+        border: 1px solid black;
+    }
+    td {
+        height: 30px;
+        width: 30px;
+    }
+</style>
+
+<body>
+<table id="our_table">
+    <tr>
+        <th>head1</th>
+        <th>head1</th>
+        <th>head1</th>
+    </tr>
+    <tr>
+        <td><span id="event">span</span></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+
+<script type="text/javascript">
+    $(function() {
+        $( "#our_table span" ).draggable();
+        $( "#our_table td" ).droppable();
+    });
+</script>
+
+</html>

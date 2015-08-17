@@ -1,6 +1,12 @@
 /**
  * Created by nm on 7/11/15.
  */
+
+function ItemObject(data) {
+    this.name = data.name;
+    this.short = data.short;
+}
+
 function $id(myId) {
     return document.getElementById(myId);
 }
@@ -452,6 +458,8 @@ var Steps = {
             });
         }
         this.update();
+        if(step == 'Lesson')
+            Steps.form.six.update();
         console.log("Content loaded");
     },
     update: function () {
@@ -466,46 +474,86 @@ var Steps = {
         no_of_days: undefined
     },
     showFullData: function () {
+        var finalTable = {};
+        finalTable.third = this.form.third.tableData;
+        finalTable.fourth = this.form.fourth.tableData;
+        finalTable.five = this.form.five.tableData;
+        finalTable.six = this.form.six.tableData;
+
         $('.finishContainer').append('' +
 
-                '<div>First Step : ' + this.form.first.school + '</div>' +
+                '<table id="our_table" class="table table-bordered">' +
+                '<tr><td></td></td>' +
+                '<td>Monday</td>' +
+                '<td>Tuesday</td>' +
+                '<td>Wednesday</td>' +
+                '<td>Thursday</td>' +
+                '<td>Friday</td>' +
+                '</tr>' +
+             //   '<tr><td> ' + finalTable.fourth[0].name + ' </td>' +
+               '<tr><td> ' + this.form.lessonTeacher.classLesson + ' </td>' +
 
-                '<div> Third Step Name: ' + this.form.third.tableData[0].name + '</div>' +
-                //      '<div> Third Step Timeoff: ' + this.form.third.tableData[0].timeOff + '</div>' +
-                //      '<div> Third Step Short: ' + this.form.third.tableData[0].short + '</div>' +
-                //      '<div> Third Step Count: ' + this.form.third.tableData[0].count + '</div>' +
 
-                '<div> Fourth Step Name: ' + this.form.fourth.tableData[0].name + '</div>' +
-                //      '<div> Fourth Step Timeoff: ' + this.form.fourth.tableData[0].timeOff + '</div>' +
-                //       '<div> Fourth Step Short: ' + this.form.fourth.tableData[0].short + '</div>' +
-                // '<div> Fifth Step Count: ' + this.form.five.tableData[0].count + '</div>' +
-                '<div> Fifth Step Name: ' + this.form.five.tableData[0].name + '</div>' +
-                //       '<div> Fifth Step Timeoff: ' + this.form.five.tableData[0].timeOff + '</div>' +
-                //       '<div> Fifth Step Short: ' + this.form.five.tableData[0].short + '</div>'
-                '<div> Sixth Step: ' + this.form.six.tableData[0].fullname + '</div> '
-            //   '<div> Sixth Step: ' + this.form.six.tableData[0].short + '</div> '
+                '<td></td>' +
+           //     '<td> ' + finalTable.third[0].short + ' </td>' +
+                '<td></td>' +
+                '<td></td>' +
+                '</tr>' +
+                '</table>' +
+
+                '<div>First Step School: ' + this.form.first.school + '</div>' +
+                '<div>First Step Academic year : ' + this.form.first.academic_year + '</div>' +
+                '<div>First Step Registration : ' + this.form.first.registration_name + '</div>'
+
+         //       '<div> Third Step Name: ' + this.form.third.tableData[0].name + '</div>' +
+        //        '<div> Fifth Step Name: ' + this.form.five.tableData[0].name + '</div>' +
+        //        '<div> Sixth Step: ' + this.form.six.tableData[0].fullname + '</div> '
         );
     }
 };
 
 Steps.view();
 
+$(function () {
+    $("#our_table span").draggable();
+    $("#our_table td").droppable();
+});
+
+Steps.lessons = {
+    teacher: false,
+    subject: false,
+    classes: false
+};
+
+
 
 Steps.form = {
     update: function () {
         this.first.school = $id('school').value;
-        this.first.academic_year = $id('academic_year');
-        this.first.registration_name = $id('registration_name');
+        this.first.academic_year = $id('academic_year').value;
+        this.first.registration_name = $id('registration_name').value;
+        this.first.no_of_days = $id('no_of_days');
         this.first.periods = $id('periods');
-        this.first.academic_year = $id('academic_year');
         this.first.weekend = $id('weekend');
+    },
+    updateLesson: function(){
+        this.lessonTeacher.teacherLesson = $id('teacherLesson').value;
+        this.lessonTeacher.subjectLesson = $id('subjectLesson').value;
+        this.lessonTeacher.classLesson = $id('classLesson').value;
+        this.lessonTeacher.classWeek = $id('classWeek').value;
+    },
+    lessonTeacher: {
+        teacherLesson: "",
+        subjectLesson: "",
+        classLesson: "",
+        classWeek: ""
     },
     first: {
         school: "",
         academic_year: "",
         registration_name: "",
         periods: "",
-        no_of_days: undefined,
+        no_of_days: "",
         weekend: ""
     },
     second: {
@@ -517,15 +565,17 @@ Steps.form = {
     third: {
         tableData: [],
         update: function () {
-            var classData = [];
+            //    var classData = [];
             $('#subjectsEnter tbody tr').each(function (index, data) {
-                var item = {};
-                var a = $(data).children();
-                item.name = a[0].innerText;
-                item.short = a[1].innerText;
-                item.count = a[2].innerText;
-                item.timeOff = a[3].innerText;
-                Steps.form.third.tableData.push(item);
+              //  for(var item in )
+                    var item = new ItemObject({name: "", short: ""});
+                    var a = $(data).children();
+                    item.name = a[0].innerText;
+                    item.short = a[1].innerText;
+                    item.count = a[2].innerText;
+                    item.timeOff = a[3].innerText;
+                    Steps.form.third.tableData.push(item);
+
             });
         }
     },
@@ -535,7 +585,8 @@ Steps.form = {
         update: function () {
             var classData = [];
             $('#classesEnter tbody tr').each(function (index, data) {
-                var item = {};
+                var item = new ItemObject({name: "", short: ""});
+               // var item;
                 var a = $(data).children();
                 item.name = a[0].innerText;
                 item.short = a[1].innerText;
@@ -551,12 +602,12 @@ Steps.form = {
         update: function () {
             var classroomsData = [];
             $('#classRoomEnter tbody tr').each(function (index, data) {
-                var item = {};
+                var item = new ItemObject({name: "", short: ""});
                 var a = $(data).children();
                 item.name = a[0].innerText;
                 item.short = a[1].innerText;
                 item.count = a[2].innerText;
-                item.timeOff = a[3].innerText;
+                //   item.timeOff = a[3].innerText;
                 Steps.form.five.tableData.push(item);
             });
         }
@@ -575,6 +626,46 @@ Steps.form = {
                 Steps.form.six.tableData.push(item);
             });
         }
+    }
+};
+
+function dismissModal(modal) {
+    $(modal).modal('hide');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+}
+
+Steps.lessons.addTeacher = function() {
+    if(Steps.lessons.teacher == false) {
+        Steps.form.six.tableData.forEach(function(data){
+           $('#teacherLesson').append('' +
+                  '<option value="'+ data.fullname +'">' + data.fullname + '</option>'
+            )
+        });
+        Steps.lessons.teacher = true;
+    }
+};
+
+
+Steps.lessons.addSubjects = function() {
+    if(Steps.lessons.subject == false) {
+        Steps.form.third.tableData.forEach(function(data){
+            $('#subjectLesson').append('' +
+                    '<option value="'+ data.name +'">' + data.name + '</option>'
+            )
+        });
+        Steps.lessons.subject = true;
+    }
+};
+
+Steps.lessons.addClasses = function() {
+    if(Steps.lessons.classes == false) {
+        Steps.form.fourth.tableData.forEach(function(data){
+            $('#classLesson').append('' +
+                    '<option value="'+ data.name +'">' + data.name + '</option>'
+            )
+        });
+        Steps.lessons.classes = true;
     }
 };
 
