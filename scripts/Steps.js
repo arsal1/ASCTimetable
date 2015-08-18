@@ -506,9 +506,13 @@ var Steps = {
             //        '<div> Sixth Step: ' + this.form.six.tableData[0].fullname + '</div> '
         );
 
-
-        Steps.form.finalStageData.classes.forEach(function (data) {
-            $('.finishContainer #our_table tbody').append('<tr><td>' + data + '</td></tr>')
+        finalTable.lessonsData.forEach(function(data){
+            if(data.week == 2) {
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td>' + data.subject + '</td><td></td><td>' + data.subject + '</td><td></td><td></td></tr>');
+            }
+            else if(data.week == 3) {
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td>' + data.subject + '</td><td></td><td>' + data.subject + '</td><td></td><td>' + data.subject + '</td></tr>');
+            }
         });
     }
 };
