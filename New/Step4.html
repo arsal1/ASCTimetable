@@ -45,12 +45,12 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">Classes</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-8 col-sm-6">
-                        <label>Subject Title:</label>
+                        <label>Class Title:</label>
                     </div>
                     <div class="col-xs-4 col-sm-6">
                         <input type="text" id="subject" name="subject">
@@ -667,7 +667,7 @@
         }
     }
     $('#subject').keyup(function () {
-        $('#short').val($('#subject').val().substr(0, 1));
+        $('#short').val($('#subject').val().substr(0, 8));
     });
     $("#saveBtn").on("click", function (e) {
         //saveBtn work here

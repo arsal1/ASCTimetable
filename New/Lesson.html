@@ -2,7 +2,7 @@
     <div class="jumbotron"></div>
     <div class="col-lg-12 SetFormat border">
 
-        <table id="subjectsEnter" class="table">
+        <table id="lessonsEnter" class="table">
             <thead>
             <tr>
                 <th>Subject</th>
@@ -159,7 +159,7 @@
 
         </div>
             <div class="col-lg-6">
-                <button type="button" class="btn btn-default btnWidth" onClick="Steps.form.six.update();Steps.view('Step6')">
+                <button type="button" class="btn btn-default btnWidth" onClick="Steps.form.lessonsData.update();Steps.view('Step7')">
                     Close
                 </button>
             </div>
@@ -186,6 +186,7 @@
       //  var Short = $("#teacher").val();
         var Teacher = $("#teacherLesson").val();
         var LessonClass = $("#classLesson").val();
+        var Week = $("#classWeek").val();
 
 
         if (isItInEditMode()) {
@@ -201,12 +202,13 @@
             row.className = row.className.replace(/\sitsSelected/g, '');
         }
         else {
-            $('#subjectsEnter tbody').append(
+            $('#lessonsEnter tbody').append(
                             "<tr class='clickable_row TableRow'> +"
                             + " <td><a class='clickable_row TableRow' onclick='work(this)'>" + Subject + "</a></td>"
                             + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + Teacher + "</a></td> "
                //             + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + Short + "</a></td> "
                             + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + LessonClass + "</a></td> "
+                            + " <td><a class='clickable_row TableRow' href='javascript:;' onclick='work(this)'>" + Week + "</a></td> "
                             + "<td>1</td>"
                             + "<td>1</td>"
                             + " </tr>"
@@ -214,7 +216,9 @@
         }
         $("#subjectLesson").val("");
         $("#teacherLesson").val("");
-        $("#classLesson").val("")
+        $("#classLesson").val("");
+        $("#classWeek").val("");
+
 
         // $id("BtnLessons").disabled = false;
         // $id("BtnTimeOff").disabled = false;

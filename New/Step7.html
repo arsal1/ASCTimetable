@@ -32,7 +32,7 @@
 
         <div class="col-lg-3">
             <input type="button" class="btn btn-default" id="btnPrevious" value="Previous" onClick="Steps.view('Step6')">
-            <input type="button" class="btn btn-default" id="btnNext" value="Finish" onclick="Steps.view('Finish')">
+            <input type="button" class="btn btn-default" id="btnNext" value="Finish" onclick="Steps.form.finalStageData.update();Steps.view('Finish')">
             <input type="button" class="btn btn-default" id="btnCancel" value="Cancel" onclick="location.href='../Main.html'">
         </div>
     </div>
