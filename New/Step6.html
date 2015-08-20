@@ -118,7 +118,7 @@
 
             </div>
             <div class="modal-footer">
-                <button id="saveBtn" type="button" class="btn btn-primary">OK</button>
+                <button id="saveBtn" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
         </div>
@@ -126,7 +126,7 @@
 </div>
 
 </br> </br>  </br>
-<button type="button" id="BtnLessons" class="btn btn-default btnWidth" disabled>
+<button type="button" id="BtnLessons" class="btn btn-default btnWidth" onclick="Steps.form.six.update();Steps.view('Lesson')" disabled>
     <img src="../images/Steps/lessons_16.png" class="btnImg"> Lessons
 </button>
 
@@ -554,7 +554,7 @@
 
     <div class="col-lg-3">
         <input type="button" class="btn btn-default" id="btnPrevious" value="Previous" onClick="Steps.view('Step5')">
-        <input type="button" class="btn btn-default" id="btnNext" value="Next" onClick="Steps.form.six.update();Steps.view('Step7')">
+        <input type="button" class="btn btn-default" id="btnNext" value="Next" onClick="Steps.form.six.update();Steps.view('Step7')" disabled>
         <input type="button" class="btn btn-default" id="btnCancel" value="Cancel"
                onClick="location.href='../Main.html'">
     </div>
@@ -602,16 +602,16 @@
             );
         }
         $("#FirstName").val("");
-        $("#lastName").val();
+        $("#lastName").val("");
         $("#Short").val("");
 
         $id("BtnLessons").disabled = false;
-        $id("BtnTimeOff").disabled = false;
-        $id("BtnConstraints").disabled = false;
+      //  $id("BtnTimeOff").disabled = false;
+     //   $id("BtnConstraints").disabled = false;
         // e.stopPropagation();
-        Steps.form.six.update();
-        Steps.view('Lesson');
-        dismissModal('myModal');
+//        Steps.form.six.update();
+       // Steps.view('Lesson');
+     //   dismissModal('myModal');
     });
 
 

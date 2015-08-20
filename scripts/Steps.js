@@ -508,21 +508,29 @@ var Steps = {
 
         finalTable.lessonsData.forEach(function(data){
             if(data.week == 2) {
-                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td>' + data.subject + '</td><td></td><td>' + data.subject + '</td><td></td><td></td></tr>');
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td></td></tr>');
             }
             else if(data.week == 3) {
-                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td>' + data.subject + '</td><td></td><td>' + data.subject + '</td><td></td><td>' + data.subject + '</td></tr>');
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td></tr>');
             }
+        });
+
+        $(function() {
+            $( ".draggable" ).draggable();
+            $( "#droppable" ).droppable({
+                drop: function( event, ui ) {
+                    $( this )
+                        .addClass( "ui-state-highlight" )
+                        .find( "td" )
+                        .html( "Dropped!" );
+                }
+            });
         });
     }
 };
 
-Steps.view();
 
-$(function () {
-    $("#our_table span").draggable();
-    $("#our_table td").droppable();
-});
+Steps.view();
 
 Steps.lessons = {
     teacher: false,
@@ -702,4 +710,7 @@ Steps.lessons.addClasses = function () {
         Steps.lessons.classes = true;
     }
 };
+
+
+
 
