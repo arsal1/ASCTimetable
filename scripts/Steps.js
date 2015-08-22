@@ -485,30 +485,15 @@ var Steps = {
 
         $('.finishContainer').append('' +
 
-                '<table id="our_table" class="table table-bordered">' +
-                '<thead><tr><td></td></td>' +
-                '<td>Monday</td>' +
-                '<td>Tuesday</td>' +
-                '<td>Wednesday</td>' +
-                '<td>Thursday</td>' +
-                '<td>Friday</td>' +
-                '</tr></thead>' +
-                '<tbody></tbody>' +
-                '</table>' +
-
-
                 '<div>First Step School: ' + this.form.first.school + '</div>' +
                 '<div>First Step Academic year : ' + this.form.first.academic_year + '</div>' +
                 '<div>First Step Registration : ' + this.form.first.registration_name + '</div>'
 
-            //       '<div> Third Step Name: ' + this.form.third.tableData[0].name + '</div>' +
-            //        '<div> Fifth Step Name: ' + this.form.five.tableData[0].name + '</div>' +
-            //        '<div> Sixth Step: ' + this.form.six.tableData[0].fullname + '</div> '
         );
 
         finalTable.lessonsData.forEach(function(data){
             if(data.week == 2) {
-                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td></td></tr>');
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td></td><td>' + data.class + '</td><td>' + data.classRooms + '</td></tr>');
             }
             else if(data.week == 3) {
                 $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td></tr>');
@@ -520,7 +505,7 @@ var Steps = {
             $( "#droppable" ).droppable({
                 drop: function( event, ui ) {
                     $( this )
-                        .addClass( "ui-state-highlight" )
+                        //.addClass( "ui-state-highlight" )
                         .find( "td" )
                         .html( "Dropped!" );
                 }
@@ -535,7 +520,8 @@ Steps.view();
 Steps.lessons = {
     teacher: false,
     subject: false,
-    classes: false
+    classes: false,
+    classRooms : false
 };
 
 
@@ -713,4 +699,13 @@ Steps.lessons.addClasses = function () {
 
 
 
-
+Steps.lessons.addClassRooms = function () {
+    if (Steps.lessons.classRooms == false) {
+        Steps.form.five.tableData.forEach(function (data) {
+            $('#classroomsLesson').append('' +
+                    '<option value="' + data.name + '">' + data.name + '</option>'
+            )
+        });
+        Steps.lessons.classes = true;
+    }
+};
