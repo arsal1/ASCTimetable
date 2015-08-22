@@ -487,7 +487,23 @@ var Steps = {
 
                 '<div>First Step School: ' + this.form.first.school + '</div>' +
                 '<div>First Step Academic year : ' + this.form.first.academic_year + '</div>' +
-                '<div>First Step Registration : ' + this.form.first.registration_name + '</div>'
+                '<div>First Step Registration : ' + this.form.first.registration_name + '</div>'+
+
+                '<table id="our_table" class="table table-bordered">' +
+            '<thead>' +
+            '<tr>' +
+            '<td></td>' +
+            '<td>Monday</td>' +
+            '<td>Tuesday</td>' +
+            '<td>Wednesday</td>' +
+            '<td>Thursday</td>' +
+            '<td>Friday</td>' +
+            '<td>Class</td>' +
+            '<td>ClassRoom</td>' +
+            '</tr>' +
+            '</thead>' +
+            '<tbody></tbody>' +
+                '</table>'
 
         );
 
@@ -635,7 +651,8 @@ Steps.form = {
                 item.subject = a[0].innerText;
                 item.teacher = a[1].innerText;
                 item.class = a[2].innerText;
-                item.week = a[3].innerText;
+                item.classRooms = a[3].innerText;
+                item.week = a[4].innerText;
                 Steps.form.lessonsData.tableData.push(item);
             });
         }
