@@ -485,45 +485,50 @@ var Steps = {
 
         $('.finishContainer').append('' +
 
-                '<div>First Step School: ' + this.form.first.school + '</div>' +
-                '<div>First Step Academic year : ' + this.form.first.academic_year + '</div>' +
-                '<div>First Step Registration : ' + this.form.first.registration_name + '</div>'+
+                '<div> School: ' + this.form.first.school + '</div>' +
+                '<div> Academic year : ' + this.form.first.academic_year + '</div>' +
+                '<div> Registration : ' + this.form.first.registration_name + '</div>' +
 
                 '<table id="our_table" class="table table-bordered">' +
-            '<thead>' +
-            '<tr>' +
-            '<td></td>' +
-            '<td>Monday</td>' +
-            '<td>Tuesday</td>' +
-            '<td>Wednesday</td>' +
-            '<td>Thursday</td>' +
-            '<td>Friday</td>' +
-            '<td>Class</td>' +
-            '<td>ClassRoom</td>' +
-            '</tr>' +
-            '</thead>' +
-            '<tbody></tbody>' +
+                '<thead>' +
+                '<tr>' +
+                '<td></td>' +
+                '<td>Monday</td>' +
+                '<td>Tuesday</td>' +
+                '<td>Wednesday</td>' +
+                '<td>Thursday</td>' +
+                '<td>Friday</td>' +
+                '<td>Class</td>' +
+                '<td>ClassRoom</td>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody></tbody>' +
                 '</table>'
-
         );
 
-        finalTable.lessonsData.forEach(function(data){
-            if(data.week == 2) {
-                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td></td><td>' + data.class + '</td><td>' + data.classRooms + '</td></tr>');
+        finalTable.lessonsData.forEach(function (data) {
+            if (data.week == 1) {
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td></td><td></td><td>' + data.class + '</td><td>' + data.classRooms + '</td></tr>');
             }
-            else if(data.week == 3) {
-                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td></tr>');
+            else if (data.week == 2) {
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td></td><td class="draggable">' + data.subject + '</td><td></td><td>' + data.class + '</td><td>' + data.classRooms + '</td></tr>');
+            }
+            else if (data.week == 3) {
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td>' + data.class + '</td><td>' + data.classRooms + '</td></tr></tr>');
+            }
+            else if (data.week == 4) {
+                $('.finishContainer #our_table tbody').append('<tr><td>' + data.class + '</td><td class="draggable">' + data.subject + '</td><td class="draggable">' + data.subject + '</td><td class="draggable">' + data.subject + '</td><td></td><td class="draggable">' + data.subject + '</td><td>' + data.class + '</td><td>' + data.classRooms + '</td></tr></tr>');
             }
         });
 
-        $(function() {
-            $( ".draggable" ).draggable();
-            $( "#droppable" ).droppable({
-                drop: function( event, ui ) {
-                    $( this )
+        $(function () {
+            $(".draggable").draggable();
+            $("#droppable").droppable({
+                drop: function (event, ui) {
+                    $(this)
                         //.addClass( "ui-state-highlight" )
-                        .find( "td" )
-                        .html( "Dropped!" );
+                        .find("td")
+                        .html("Dropped!");
                 }
             });
         });
@@ -537,7 +542,7 @@ Steps.lessons = {
     teacher: false,
     subject: false,
     classes: false,
-    classRooms : false
+    classRooms: false
 };
 
 
@@ -715,7 +720,6 @@ Steps.lessons.addClasses = function () {
 };
 
 
-
 Steps.lessons.addClassRooms = function () {
     if (Steps.lessons.classRooms == false) {
         Steps.form.five.tableData.forEach(function (data) {
@@ -723,6 +727,6 @@ Steps.lessons.addClassRooms = function () {
                     '<option value="' + data.name + '">' + data.name + '</option>'
             )
         });
-        Steps.lessons.classes = true;
+        Steps.lessons.classRooms = true;
     }
 };
